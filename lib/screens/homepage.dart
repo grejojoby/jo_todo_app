@@ -2,6 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:jo_todo/database_helper.dart';
 import 'package:jo_todo/screens/taskpage.dart';
 import 'package:jo_todo/widgets.dart';
+import 'package:splashscreen/splashscreen.dart';
+
+class Splash2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      seconds: 6,
+      navigateAfterSeconds: new Homepage(),
+      title: new Text(
+        'Jo ToDo',
+        textScaleFactor: 2,
+      ),
+      image: Image(
+        image: AssetImage('assets/images/logo.png'),
+      ),
+      loadingText: Text("Loading"),
+      photoSize: 100.0,
+      loaderColor: Colors.blue,
+    );
+  }
+}
 
 class Homepage extends StatefulWidget {
   @override
@@ -24,14 +45,28 @@ class _HomepageState extends State<Homepage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      top: 32.0,
-                      bottom: 32.0,
-                    ),
-                    child: Image(
-                      image: AssetImage('assets/images/logo.png'),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(
+                          top: 32.0,
+                          bottom: 32.0,
+                        ),
+                        child: Image(
+                          image: AssetImage('assets/images/logo.png'),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 24.0),
+                        child: Text("Jo Todo",
+                            style: TextStyle(
+                              color: Color(0xFF211551),
+                              fontSize: 40.0,
+                              fontWeight: FontWeight.w900,
+                            )),
+                      ),
+                    ],
                   ),
                   Expanded(
                     child: FutureBuilder(
