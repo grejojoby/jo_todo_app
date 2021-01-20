@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.grejojoby.jo_todo">
    <application
-        android:label="jo_todo"
+        android:label="Jo Todo"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
